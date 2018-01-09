@@ -1,12 +1,12 @@
 body {
 	background: url("../images/rockpaperscissors.jpg");
-	/* background-size: 1300px;	 */
+
 }
 
 header {
 	color: white;
 	font-family: 'Special Elite', cursive;
-	margin-bottom: 100px; 
+	margin-bottom: 30px; 
 
 }
 
@@ -20,5 +20,24 @@ header h2 {
 	text-align: center;
 	color: red;
 	transform: rotate(7deg);
+	-webkit-animation-name: versus;
+    -webkit-animation-duration: 10s; 
+    animation-iteration-count: infinite;
 
+}
+
+@keyframes versus {
+     0%   {color: red;}
+    25%  {color: yellow;}
+    50%  {color: blue;}
+    100% {color: green;}
+}
+
+.card {
+	opacity: 0.9;
+}
+
+.img-thumbnail {
+	width: 100px;
+	height: 100px;
 }
