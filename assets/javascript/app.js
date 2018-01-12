@@ -38,22 +38,74 @@ var choice2 = ["rock", "paper", "scissors"];
 
 
 
-$("#game-start").on("click", function playerName() {
+$("#game-start1").on("click", function player1Start(event) {
+	
 	event.preventDefault();
 
 	console.log("i was pressed!");
+	
+	//Grab input from textbox 
+		player1 = $("#player1").val().trim(); 
 
-	if (player1 == " ") {
-		//Grab input from textbox 
+			console.log(player1);
 
-		player1 = $("#input").val().trim(); 
-		console.log(player1);
+			$("#name1").html(player1);
 
-		//var giph = $("input").val().trim(); 
-	}
+		if(player1 !== "") {
+			console.log("spaceships on bankhead");
 
-		//$("#name1").html(player1); 
-	})
+			$("#form1").hide();
+		}
+
+
+})
+
+
+$("#game-start2").on("click", function player2Start(event) {
+	
+	event.preventDefault();
+
+	console.log("i was pressed 2!");
+	
+	//Grab input from textbox 
+		player2 = $("#player2").val().trim(); 
+
+			console.log(player2);
+
+			$("#name2").html(player2);
+
+			if(player2 !== "") {
+			console.log("yeah muthafucka");
+
+			$("#form2").hide();
+
+		}
+
+
+})
+
+		/*player2 = $("#player2").val().trim();
+
+			console.log(player2);  
+		*/
+
+
+		/*if(player1 !== "") {
+			console.log("yeah butt");
+
+			player2 = $("#players").val().trim();
+
+			console.log(player2);  
+
+		}
+ */
+		
+		
+	
+
+
+
+
 
 	/*//Grab input from textbox
 	var names = $("#input").val().trim();
