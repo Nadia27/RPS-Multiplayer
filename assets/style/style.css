@@ -3,6 +3,7 @@ body {
 
 }
 
+
 header {
 	color: white;
 	font-family: 'Special Elite', cursive;
@@ -41,3 +42,25 @@ header h2 {
 	width: 100px;
 	height: 100px;
 }
+
+#chat {
+	opacity: 0.9; 
+}
+
+#input {
+	opacity: 0.9; 
+}
+
+
+
+
+
+#chat {
+	display: none;
+}
+
+#message {
+	display: none;
+}
+
+

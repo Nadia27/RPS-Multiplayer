@@ -9,6 +9,10 @@
 	<link href="https://fonts.googleapis.com/css?family=Special+Elite" rel="stylesheet">
 	<!--CSS-->
 	<link rel="stylesheet" type="text/css" href="assets/style/style.css">
+	<!--jQuery-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<!--Firebase-->
+	<script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
 
 </head>
 <body>
@@ -17,8 +21,35 @@
 
 	<header>
 		<h1>Rock... Paper... Scissors...</h1>
-		<h2>Shoot</h2>
+		<h2>Shoot!!</h2>
 	</header>
+
+	<div class="row">
+  		<div class="col-sm-6">
+		<div class="input-group mb-3" id="players">
+  
+  			<input type="text" id="input" class="form-control" placeholder="Player Name" aria-label="Recipient's username" aria-describedby="basic-addon2">
+  		
+  		<div class="input-group-append">
+    
+    		<button class="btn btn-danger" type="button" id="game-start">Start</button>
+  		</div>
+	
+		</div>
+		</div>
+		<!-- 	<div class="col-sm-6">
+				<div class="input-group mb-3" id="player2">
+		  
+		  			<input type="text" class="form-control" placeholder="Player 2 Name" aria-label="Recipient's username" aria-describedby="basic-addon2">
+		  		
+		  		<div class="input-group-append">
+		    
+		    		<button class="btn btn-danger" type="button" id="game-start">Start</button>
+		  		</div>
+			
+				</div>
+				</div> -->
+	</div>
 
 	<div class="row">
   		<div class="col-sm-6">
@@ -79,12 +110,28 @@
     
     <form>
       	
-    	<div class="form-group">
+      	<!--Chat box-->
+    	<div class="form-group" id="chat">
+    	    
+    		<label for="Textarea1"></label>
+    		<textarea class="form-control" id="Textarea1" rows="3">
+    			
+    		</textarea>
+    	</div>
+    	
+    	<!--Input box-->
+    	<div class="input-group mb-3" id="message">
+    	  		
+    	  			<input type="text" class="form-control" placeholder="Hello" aria-label="Recipient's username" aria-describedby="basic-addon2">
+    	  		
+    	  		<!--Chat button-->
+    	  		<div class="input-group-append">
+    		
+    				<button class="btn btn-danger" type="button" id="submit">Chat</button>
+    	  		</div>
+    	</div>
     
-    		<label for="exampleFormControlTextarea1"></label>
-    		<textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-  		</div>
-	</form>
+    </form>
 </div>
   		
 	
@@ -95,6 +142,6 @@
 
 
 
-
+<script type="text/javascript" src="assets/javascript/app.js"></script>
 </body>
 </html>
