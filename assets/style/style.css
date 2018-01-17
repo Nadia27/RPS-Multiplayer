@@ -34,6 +34,36 @@ header h2 {
     100% {color: green;}
 }
 
+#alert {
+	font-size: 30px;
+	-webkit-animation-name: alert;
+    -webkit-animation-duration: 10s; 
+    animation-iteration-count: infinite;
+
+}
+
+@keyframes alert {
+ 
+    25%  {color: yellow;}
+    50%  {color: red;}
+    100% {color: orange;}
+}
+
+#alert2 {
+	font-size: 30px;
+	-webkit-animation-name: secondalert;
+    -webkit-animation-duration: 10s; 
+    animation-iteration-count: infinite;
+
+}
+
+@keyframes secondalert {
+ 
+    25%  {color: yellow;}
+    50%  {color: red;}
+    100% {color: orange;}
+}
+
 .card {
 	opacity: 0.9;
 }
