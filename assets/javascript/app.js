@@ -24,14 +24,14 @@ var player1 = "";
 var wins1 = 0; 
 var loses1 = 0;
 var chat1 = "";
-var player1Choice = ["rock", "paper", "scissors"]; 
+var userWeapon1 = "";  
 
 	//Player 2 
 var player2 = ""; 
 var wins2 = 0; 
 var loses2 = 0; 
 var chat2 = ""; 
-var choice2 = ["rock", "paper", "scissors"]; 
+var userWeapon2 = this.id;  
 
 
 //At start of game player1 input name
@@ -57,81 +57,59 @@ $("#game-start1").on("click", function player1Start(event) {
 
 			//Notifiy user to choose his/her weapon
 			$("#alert").html("<b>Choose your weapon!</b>");
-
-}
-
-		  $("#rock1").on('click', function() {
-  			$("#paper1").hide();
-  			$("#scissors1").hide();
-  			$("#alert").hide();
-
-
-
-})
-		$("#paper1").on('click', function() {
-  			$("#rock1").hide();
-  			$("#scissors1").hide();
-  			$("#alert").hide();
-
-})
-		$("#scissors1").on('click', function() {
-  			$("#rock1").hide();
-  			$("#paper1").hide();
-  			$("#alert").hide();
-
-	})
-	game_ref.push ({
-				
-				player1: player1,
-				
-				dateAdded: firebase.database.ServerValue.TIMESTAMP
-			}) 
-		})
-		
 		//Once player chooses weapon other options should disappear
-
+	}
 	
-		/*$(".img-thumbnail").click(function() {
-   			 console.log(this.id); // get id of clicked li
-    
-    		var userGuess1 = this.id;  
-
+		$(".img-thumbnail").click(function() {
+   			 //console.log(this.id); // get id of clicked li 
+   			 	userWeapon1 = this.id; 
     
     //alert("I am the user's guess " + userGuess1);
-    
-    if(userGuess1 = rock1) {
-    	//console.log("dum dum ditty");
-      $("#paper1").hide();
-      $("#scissors1").hide(); 
+    		
+    		if(userWeapon1 == "rock1") {
+    			//console.log("dum dum ditty");
+      			$("#paper1").hide();
+      			$("#scissors1").hide(); 
+      			$("#alert").hide(); 
     
   
-   	} 
+   			} 
 
-   	if(userGuess1 = paper1) {
-   		console.log("yup!");
-   		$()
+			if(userWeapon1 == "paper1") {
+   				//console.log("yup!");
+   				$("#rock1").hide();
+      			$("#scissors1").hide();
+      			$("#alert").hide();  
 
-   	}
-    
-});
+			}
+
+			if(userWeapon1 == "scissors1") {
+				//console.log("grit"); 
+				$("#rock1").hide();
+      			$("#paper1").hide();
+      			$("#alert").hide(); 
+			}
 
 
-});*/
 
+	})
 	
-
-
+	/*game_ref.push ({
+				
+				player1: player1,
+				userWeapon1: userWeapon1, 
+				
+				dateAdded: firebase.database.ServerValue.TIMESTAMP
+		
+	}) */
 
 			
-
+})
 		
-	
 
-
-
-
-
-
+   
+    
+//Player 2
 $("#game-start2").on("click", function player2Start(event) {
 	
 	event.preventDefault();
@@ -152,63 +130,91 @@ $("#game-start2").on("click", function player2Start(event) {
 			$("#alert2").html("<b>Choose your weapon!</b>");
 
 		}
-		
-		$("#rock2").on('click', function() {
-  			$("#paper2").hide();
-  			$("#scissors2").hide();
-  			$("#alert2").hide();
+		//Player2 choose weapon
+		$(".img-thumbnail").click(function() {
+   			 
+   			 //console.log(this.id); 
+   			 	userWeapon2 = this.id;
 
-		})
-		
-		$("#paper2").on('click', function() {
-  			$("#rock2").hide();
-  			$("#scissors2").hide();
-  			$("#alert2").hide();
+   			 
+    		//alert("I am the user's guess " + userWeapon2);
+    		
+    		if(userWeapon2 == "rock2") {
+    			//console.log("I will not lose");
+      			$("#paper2").hide();
+      			$("#scissors2").hide();
+      			$("#alert2").hide(); 
+    
+  
+   			} 
 
-		})
-		
-		$("#scissors2").on('click', function() {
-  			$("#rock2").hide();
-  			$("#paper2").hide();
-  			$("#alert2").hide();
-		})
+			if(userWeapon2 == "paper2") {
+   				//console.log("Another one");
+   				$("#rock2").hide();
+      			$("#scissors2").hide();
+      			$("#alert2").hide();  
 
-		game_ref.push ({
+			}
+
+			if(userWeapon2 == "scissors2") {
+				//console.log("hip-hop"); 
+				$("#rock2").hide();
+      			$("#paper2").hide();
+      			$("#alert2").hide(); 
+			}
+
+			
+	})
+
+		/*game_ref.push ({
 				
 				player2: player2,
+				userWeapon2: userWeapon2,
 				dateAdded: firebase.database.ServerValue.TIMESTAMP
-			}) 
+			})*/ 
 		
-
+			
+			
 })
+
+// compare player 1 selection with player to selection
+function battleGrounds() {
+	
+	userWeapon2 = this.id; 
+	var x = document.getElementById("rock1").src;
+	var y = document.getElementById("rock2").src; 
+
+
+	if(x===y) {
+		console.log("game-time!"); 
+	}
+
+}
 
 			
         
-   
+battleGrounds();  
 
-	game_ref.on("child_added", function(snapshot) {
+
+
+/*	game_ref.on("child_added", function(snapshot) {
       
       console.log(snapshot.val());
      
      player1 = snapshot.val().player1;
-     player2 = snapshot.val().player2;  
+     player2 = snapshot.val().player2;
+     userWeapon1 = snapshot.val().userWeapon1; 
+     userWeapon2 = snapshot.val().userWeapon2;
 
      	console.log(player1);
 
      $("#name1").text(player1); 
-     $("#name2").text(player2); 
+     $("#name2").text(player2);
+    
 
 
 
-});
-
-	game_ref.orderByChild("dateAdded").limitToLast(1).on("child_added", function(snapshot) {
-
-      // Change the HTML to reflect
-      $("#name1").text(snapshot.val().player1);
-      $("#name2").text(snapshot.val().player2);
-      
-    })
+});*/
 
 
 
