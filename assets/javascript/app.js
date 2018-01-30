@@ -31,7 +31,7 @@ var player2 = "";
 var wins2 = 0; 
 var loses2 = 0; 
 var chat2 = ""; 
-var userWeapon2 = this.id;  
+var userWeapon2 = "";  
 
 
 //At start of game player1 input name
@@ -50,18 +50,20 @@ $("#game-start1").on("click", function player1Start(event) {
 
 	//when player inputs name... hide form
 		if(player1 !== "") {
+			
 			//console.log("spaceships on bankhead");
-
 
 			$("#form1").hide();
 
 			//Notifiy user to choose his/her weapon
 			$("#alert").html("<b>Choose your weapon!</b>");
+
+		}
+			
 		//Once player chooses weapon other options should disappear
-	}
 	
 		$(".img-thumbnail").click(function() {
-   			 //console.log(this.id); // get id of clicked li 
+   			 //console.log(this.id); 
    			 	userWeapon1 = this.id; 
     
     //alert("I am the user's guess " + userGuess1);
@@ -71,6 +73,8 @@ $("#game-start1").on("click", function player1Start(event) {
       			$("#paper1").hide();
       			$("#scissors1").hide(); 
       			$("#alert").hide(); 
+
+      			battleGrounds(); 
     
   
    			} 
@@ -80,6 +84,8 @@ $("#game-start1").on("click", function player1Start(event) {
    				$("#rock1").hide();
       			$("#scissors1").hide();
       			$("#alert").hide();  
+
+      			battleGrounds(); 
 
 			}
 
@@ -128,6 +134,7 @@ $("#game-start2").on("click", function player2Start(event) {
 
 			$("#form2").hide();
 			$("#alert2").html("<b>Choose your weapon!</b>");
+			
 
 		}
 		//Player2 choose weapon
@@ -145,6 +152,7 @@ $("#game-start2").on("click", function player2Start(event) {
       			$("#scissors2").hide();
       			$("#alert2").hide(); 
     
+    			battleGrounds(); 
   
    			} 
 
@@ -172,30 +180,25 @@ $("#game-start2").on("click", function player2Start(event) {
 				userWeapon2: userWeapon2,
 				dateAdded: firebase.database.ServerValue.TIMESTAMP
 			})*/ 
-		
-			
-			
 })
 
-// compare player 1 selection with player to selection
+
+//I am having trouble with this function... how to re-declare so I can compare userWeapon1 with userWeapon2
+// compare player 1 selection with player2 selection
 function battleGrounds() {
-	
-	userWeapon2 = this.id; 
-	var x = document.getElementById("rock1").src;
-	var y = document.getElementById("rock2").src; 
 
+	userWeapon1 = $(this).attr('src');
+	userWeapon2 = $(this).attr('src');
 
-	if(x===y) {
-		console.log("game-time!"); 
+	if(userWeapon1) { 
+
+		/*userWeapon1 = "rock";*/
+		console.log("tie"); 
 	}
 
 }
 
-			
-        
-battleGrounds();  
-
-
+	
 
 /*	game_ref.on("child_added", function(snapshot) {
       
