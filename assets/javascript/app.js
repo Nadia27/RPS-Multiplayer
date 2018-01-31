@@ -97,9 +97,13 @@ $("#game-start1").on("click", function player1Start(event) {
       			$("#alert").hide(); 
 			}
 
+			//Run battleGrounds() if both players have chosen a weapon
+			if (userWeapon1 && userWeapon2 !== "") {
 
-		if (userWeapon1 && userWeapon2) battleGrounds();
+				
+				battleGrounds();
 
+		} 
 	})
 
 	
@@ -174,7 +178,12 @@ $("#game-start2").on("click", function player2Start(event) {
       			$("#alert2").hide(); 
 			}
 
-		if (userWeapon1 && userWeapon2)  battleGrounds();
+			//Run battleGrounds() if both players have chosen a weapon
+			if (userWeapon2 && userWeapon1 !== "" ) {  
+
+				battleGrounds();
+
+			} 
 			
 	})
 
@@ -191,14 +200,48 @@ $("#game-start2").on("click", function player2Start(event) {
 //I am having trouble with this function... how to re-declare userWeapon choices so I can compare userWeapon1 with userWeapon2
 // compare player 1 selection with player2 selection
 function battleGrounds() {
-	//console.log('this runs');
+
+	console.log("im running");
+
+	if ((userWeapon1 === "rock1") || (userWeapon1 === "paper1") || (userWeapon1 === "scissors1") && (userWeapon2 ==="rock2")  || (userWeapon2 === "paper2") || (userWeapon2 === "scissors2")) {
+
+		console.log("this shit gettting gritty");
+
+		/*if((userWeapon1 ==="rock1") && (userWeapon2 ==="rock2")) {
+			alert("gritty!"); 
+		}
+*/
+ 	}
+
+ }
+	
+	
+			
+
+
+	/*if (userWeapon1 == 'rock1' && userWeapon2 == 'rock2') {
+
 		
-		if(userWeapon1=="rock1" && userWeapon2 =="rock2") { 
+			console.log("grit"); */
 
-		console.log("tie"); 
-	}
+		
 
-}
+		//} 
+			
+
+	
+		/*if ((userWeapon1 ==="rock1") && (userWeapon2 === "rock2" )) {  
+
+				console.log("i work!"); 
+			} */
+	
+
+	/* if (userWeapon1 == "rock1" && userWeapon2 == "rock2") {
+		
+			console.log("tie"); 
+		}
+*/
+
 
 	
 
