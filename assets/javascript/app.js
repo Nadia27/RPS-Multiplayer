@@ -19,12 +19,17 @@
 
 //Initial values 
 
+/*var rock = document.getElementById("rock").src; 
+var paper = document.getElementById("paper").src; 
+var scissors = document.getElementById("scissors").src; 
+	*/
 	//Player 1
 var player1 = ""; 
 var wins1 = 0; 
 var loses1 = 0;
 var chat1 = "";
-var userWeapon1 = "";  
+var userWeapon1 = ""; 
+
 
 	//Player 2 
 var player2 = ""; 
@@ -73,9 +78,7 @@ $("#game-start1").on("click", function player1Start(event) {
       			$("#paper1").hide();
       			$("#scissors1").hide(); 
       			$("#alert").hide(); 
-
-      			battleGrounds(); 
-    
+    			
   
    			} 
 
@@ -83,9 +86,7 @@ $("#game-start1").on("click", function player1Start(event) {
    				//console.log("yup!");
    				$("#rock1").hide();
       			$("#scissors1").hide();
-      			$("#alert").hide();  
-
-      			battleGrounds(); 
+      			$("#alert").hide();   
 
 			}
 
@@ -97,8 +98,10 @@ $("#game-start1").on("click", function player1Start(event) {
 			}
 
 
+		if (userWeapon1 && userWeapon2) battleGrounds();
 
 	})
+
 	
 	/*game_ref.push ({
 				
@@ -120,27 +123,28 @@ $("#game-start2").on("click", function player2Start(event) {
 	
 	event.preventDefault();
 
-	console.log("i was pressed 2!");
+	//console.log("i was pressed 2!");
 	
 	//Grab input from textbox 
 		player2 = $("#player2").val().trim(); 
 
-			console.log(player2);
+			//console.log(player2);
 
 			$("#name2").html(player2);
 
 		if(player2 !== "") {
-			console.log("yeah muthafucka");
+			//console.log("yeah muthafucka");
 
 			$("#form2").hide();
 			$("#alert2").html("<b>Choose your weapon!</b>");
-			
 
+			
 		}
 		//Player2 choose weapon
 		$(".img-thumbnail").click(function() {
    			 
    			 //console.log(this.id); 
+
    			 	userWeapon2 = this.id;
 
    			 
@@ -152,7 +156,6 @@ $("#game-start2").on("click", function player2Start(event) {
       			$("#scissors2").hide();
       			$("#alert2").hide(); 
     
-    			battleGrounds(); 
   
    			} 
 
@@ -171,8 +174,10 @@ $("#game-start2").on("click", function player2Start(event) {
       			$("#alert2").hide(); 
 			}
 
+		if (userWeapon1 && userWeapon2)  battleGrounds();
 			
 	})
+
 
 		/*game_ref.push ({
 				
@@ -183,16 +188,13 @@ $("#game-start2").on("click", function player2Start(event) {
 })
 
 
-//I am having trouble with this function... how to re-declare so I can compare userWeapon1 with userWeapon2
+//I am having trouble with this function... how to re-declare userWeapon choices so I can compare userWeapon1 with userWeapon2
 // compare player 1 selection with player2 selection
 function battleGrounds() {
+	//console.log('this runs');
+		
+		if(userWeapon1=="rock1" && userWeapon2 =="rock2") { 
 
-	userWeapon1 = $(this).attr('src');
-	userWeapon2 = $(this).attr('src');
-
-	if(userWeapon1) { 
-
-		/*userWeapon1 = "rock";*/
 		console.log("tie"); 
 	}
 
