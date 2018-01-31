@@ -15,21 +15,14 @@
 	var database = firebase.database();
 	var game_ref = database.ref('game');
 
-
-
 //Initial values 
 
-/*var rock = document.getElementById("rock").src; 
-var paper = document.getElementById("paper").src; 
-var scissors = document.getElementById("scissors").src; 
-	*/
 	//Player 1
 var player1 = ""; 
 var wins1 = 0; 
 var loses1 = 0;
 var chat1 = "";
 var userWeapon1 = ""; 
-
 
 	//Player 2 
 var player2 = ""; 
@@ -54,7 +47,7 @@ $("#game-start1").on("click", function player1Start(event) {
 			$("#name1").html(player1);
 
 	//when player inputs name... hide form
-		if(player1 !== "") {
+		if(player1 != "") {
 			
 			//console.log("spaceships on bankhead");
 
@@ -71,7 +64,7 @@ $("#game-start1").on("click", function player1Start(event) {
    			 //console.log(this.id); 
    			 	userWeapon1 = this.id; 
     
-    //alert("I am the user's guess " + userGuess1);
+    		//alert("I am the user's guess " + userGuess1);
     		
     		if(userWeapon1 == "rock1") {
     			//console.log("dum dum ditty");
@@ -79,8 +72,7 @@ $("#game-start1").on("click", function player1Start(event) {
       			$("#scissors1").hide(); 
       			$("#alert").hide(); 
     			
-  
-   			} 
+  			} 
 
 			if(userWeapon1 == "paper1") {
    				//console.log("yup!");
@@ -98,13 +90,12 @@ $("#game-start1").on("click", function player1Start(event) {
 			}
 
 			//Run battleGrounds() if both players have chosen a weapon
-			if (userWeapon1 && userWeapon2 !== "") {
+			if ((userWeapon1 != "") && (userWeapon2 != "")) {
 
 				
 				battleGrounds();
-
-		} 
-	})
+			} 
+		})
 
 	
 	/*game_ref.push ({
@@ -136,14 +127,14 @@ $("#game-start2").on("click", function player2Start(event) {
 
 			$("#name2").html(player2);
 
-		if(player2 !== "") {
+		if(player2 != "") {
 			//console.log("yeah muthafucka");
 
 			$("#form2").hide();
 			$("#alert2").html("<b>Choose your weapon!</b>");
 
-			
 		}
+		
 		//Player2 choose weapon
 		$(".img-thumbnail").click(function() {
    			 
@@ -159,9 +150,7 @@ $("#game-start2").on("click", function player2Start(event) {
       			$("#paper2").hide();
       			$("#scissors2").hide();
       			$("#alert2").hide(); 
-    
-  
-   			} 
+    		} 
 
 			if(userWeapon2 == "paper2") {
    				//console.log("Another one");
@@ -179,7 +168,7 @@ $("#game-start2").on("click", function player2Start(event) {
 			}
 
 			//Run battleGrounds() if both players have chosen a weapon
-			if (userWeapon2 && userWeapon1 !== "" ) {  
+			if ((userWeapon2 != "") && (userWeapon1 != "")) {  
 
 				battleGrounds();
 
@@ -197,7 +186,7 @@ $("#game-start2").on("click", function player2Start(event) {
 })
 
 
-//I am having trouble with this function... how to re-declare userWeapon choices so I can compare userWeapon1 with userWeapon2
+//I am having trouble with this function... 
 // compare player 1 selection with player2 selection
 function battleGrounds() {
 
@@ -207,10 +196,10 @@ function battleGrounds() {
 
 		console.log("this shit gettting gritty");
 
-		/*if((userWeapon1 ==="rock1") && (userWeapon2 ==="rock2")) {
-			alert("gritty!"); 
+		if((userWeapon1 ==="rock1") && (userWeapon2 ==="paper2")) {
+			console.log("gritty!"); 
 		}
-*/
+
  	}
 
  }
