@@ -1,3 +1,4 @@
+
 //Initialize Firebase
   var config = {
     apiKey: "AIzaSyCCNyiJ25Eg5CEmcoJPrMkHr5Q44QoPiAg",
@@ -60,9 +61,9 @@ $("#game-start1").on("click", function player1Start(event) {
 			
 		//Once player chooses weapon other options should disappear
 	
-		$(".img-thumbnail").click(function() {
-   			 //console.log(this.id); 
-   			 	userWeapon1 = this.id; 
+		$(".img-thumbnail.1").click(function() {
+   			 
+   			 userWeapon1 = this.id
     
     		//alert("I am the user's guess " + userGuess1);
     		
@@ -136,9 +137,8 @@ $("#game-start2").on("click", function player2Start(event) {
 		}
 		
 		//Player2 choose weapon
-		$(".img-thumbnail").click(function() {
+		$(".img-thumbnail.2").click(function() {
    			 
-   			 //console.log(this.id); 
 
    			 	userWeapon2 = this.id;
 
@@ -192,24 +192,107 @@ function battleGrounds() {
 
 	console.log("im running");
 
+	//debugger; 
+
 	if ((userWeapon1 === "rock1") || (userWeapon1 === "paper1") || (userWeapon1 === "scissors1") && (userWeapon2 ==="rock2")  || (userWeapon2 === "paper2") || (userWeapon2 === "scissors2")) {
 
 		console.log("this shit gettting gritty");
 
-		if((userWeapon1 ==="rock1") && (userWeapon2 ==="paper2")) {
-			console.log("gritty!"); 
+		if((userWeapon1 ==="rock1") && (userWeapon2 ==="rock2")) {
+			
+			//console.log("tie");
+
+
+			$("#alert3").html("<b>Tie Game!</b>");
+			$("#alert4").html("<b>Tie Game!</b>");
+ 
+		
+		} else if((userWeapon1 ==="rock1") && (userWeapon2 ==="paper2")) {
+			
+			console.log(player2 + " wins");
+
+			wins2++; 
+			loses1++; 
+
+			$("#wins2").html(wins2); 
+			$("#loses1").html(loses1); 
+
+			$("#alert3").html("<b>"player2 +" wins!!</b>");
+			$("#alert4").html("<b>Tie Game!</b>");
+		
+		}else if ((userWeapon1 === "rock1") && (userWeapon2 === "scissors2")) {
+
+			console.log(player1 + " wins!"); 
+
+			wins1++;
+			loses2++;
+
+			$("#wins1").html(wins1);
+			$("#loses2").html(loses2);   
+		
+		}else if ((userWeapon1 === "paper1") && (userWeapon2 === "rock2")) {
+
+			console.log(player1 + " wins!"); 
+
+			wins1++; 
+			loses2++; 
+
+			$("#wins1").html(wins1); 
+			$("#loses2").html(loses2); 
+
+		}else if ((userWeapon1 === "paper1") && (userWeapon2 === "paper2")) {
+
+			console.log("tie"); 
+
+		}else if ((userWeapon1 === "paper1") && (userWeapon2 === "scissors2")) {
+
+			console.log(player2 + " wins!"); 
+
+			wins2++; 
+			loses1++; 
+
+			$("#wins2").html(wins2); 
+			$("#loses1").html(loses1); 
+		
+		}else if ((userWeapon1 === "scissors1") && (userWeapon2 === "rock2")) {
+
+			console.log(player2 + " wins"); 
+
+			wins2++; 
+			loses1++;
+
+			$("#wins2").html(wins2); 
+			$("#loses1").html(loses1);  
+		
+		}else if ((userWeapon1 === "scissors1") && (userWeapon2 === "paper2")) {
+
+			console.log(player1 + " wins"); 
+
+			wins1++; 
+			loses2++; 
+
+			$("#wins1").html(wins1); 
+			$("#loses2").html(loses2); 
+		
+		}else if ((userWeapon1 === "scissors1") && (userWeapon2 === "scissors2")) {
+
+			console.log("tie"); 
 		}
 
- 	}
+	}
 
- }
+}
+
+//Reset game pieces 
+function resetGame() {
+	
+}
 	
 	
 			
 
 
 	/*if (userWeapon1 == 'rock1' && userWeapon2 == 'rock2') {
-
 		
 			console.log("grit"); */
 
@@ -220,7 +303,6 @@ function battleGrounds() {
 
 	
 		/*if ((userWeapon1 ==="rock1") && (userWeapon2 === "rock2" )) {  
-
 				console.log("i work!"); 
 			} */
 	
@@ -242,18 +324,12 @@ function battleGrounds() {
      player2 = snapshot.val().player2;
      userWeapon1 = snapshot.val().userWeapon1; 
      userWeapon2 = snapshot.val().userWeapon2;
-
      	console.log(player1);
-
      $("#name1").text(player1); 
      $("#name2").text(player2);
     
-
-
-
 });*/
 
 
 
 		
-

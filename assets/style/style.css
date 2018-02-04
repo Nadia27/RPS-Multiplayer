@@ -34,7 +34,12 @@ header h2 {
     100% {color: green;}
 }
 
-#alert {
+button {
+	margin: 5px;
+
+}
+
+#alert, #alert2, #alert3, #alert4 {
 	font-size: 30px;
 	-webkit-animation-name: alert;
     -webkit-animation-duration: 10s; 
@@ -49,7 +54,7 @@ header h2 {
     100% {color: orange;}
 }
 
-#alert2 {
+/* #alert2 {
 	font-size: 30px;
 	-webkit-animation-name: secondalert;
     -webkit-animation-duration: 10s; 
@@ -63,6 +68,8 @@ header h2 {
     50%  {color: red;}
     100% {color: orange;}
 }
+ */
+
 
 .card {
 	opacity: 0.9;

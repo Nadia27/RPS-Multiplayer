@@ -1,50 +1,51 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>RPS-Mulitiplayer</title>
-	<!--Bootstrap-->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
-	<!--Google Fonts-->
-	<link href="https://fonts.googleapis.com/css?family=Special+Elite" rel="stylesheet">
-	<!--CSS-->
-	<link rel="stylesheet" type="text/css" href="assets/style/style.css">
-	<!--jQuery-->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<!--Firebase-->
-	<script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+  <meta charset="UTF-8">
+  <title>RPS-Mulitiplayer</title>
+  <!--Bootstrap-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+  <!--Google Fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Special+Elite" rel="stylesheet">
+  <!--CSS-->
+  <link rel="stylesheet" type="text/css" href="assets/style/style.css">
+  <!--jQuery-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!--Firebase-->
+  <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
 
 </head>
 <body>
-	
-	<div class="container">
+  
+  <div class="container">
 
-	<header>
-		<h1>Rock... Paper... Scissors...</h1>
-		<h2>Shoot!!</h2>
-	</header>
+  <header>
+    <h1>Rock... Paper... Scissors...</h1>
+    <h2>Shoot!!</h2>
+  </header>
 
-	<div class="row">
-  		<div class="col-sm-6">
+  <div class="row">
+      <div class="col-sm-6">
 
-        <p id="alert"></p>
-		
+        <p id="alert"></p><p id="alert3"></p>
+    
         <div class="input-group mb-3" id="form1">
   
-  			   <input type="text" id="player1" class="form-control" placeholder="Player 1 Name" aria-label="Recipient's username" aria-describedby="basic-addon2">
+           <input type="text" id="player1" class="form-control" placeholder="Player 1 Name" aria-label="Recipient's username" aria-describedby="basic-addon2">
 
-  		
-  		  <div class="input-group-append">
+      
+        <div class="input-group-append">
     
-    		  <button class="btn btn-danger" type="button" id="game-start1">Start</button>
-  		  </div>
-	
-		    </div>
-	</div>
-		
+          <button class="btn btn-danger" type="button" id="game-start1">Start</button>
+        </div>
+  
+        </div>
+  </div>
+    
      <div class="col-sm-6">
 
-      <p id="alert2"></p>
+      <p id="alert2"></p><p id="alert4"></p>
         
         <div class="input-group mb-3" id="form2">
       
@@ -57,96 +58,96 @@
       
         </div>
         </div>
-	</div>
+  </div>
 
-	<div class="row">
-  		<div class="col-sm-6">
-   	 		<div class="card">
-      			<div class="card-body" id="player1">
+  <div class="row">
+      <div class="col-sm-6">
+        <div class="card">
+            <div class="card-body" id="player1">
         
-        			<h5 class="card-title">Player 1:<p id="name1"></p></h5>
-        			
-        			<p class="card-text">Wins:<p id="wins"></p> Loses:<p id="loses"></p></p>
-        			<div class="row">
-        					<div class="col-sm-4">
-        						<img src="assets/images/rock.jpg" alt="rock" class="img-thumbnail" id="rock1">
-        					</div>
+              <h5 class="card-title">Player 1:<p id="name1"></p></h5>
+              
+              <p class="card-text">Wins:<p id="wins1"></p> Loses:<p id="loses1"></p></p>
+              <div class="row">
+                  <div class="col-sm-4">
+                    <img src="assets/images/rock.jpg" alt="rock" class="img-thumbnail 1" id="rock1">
+                  </div>
 
-        					<div class="col-sm-4">
+                  <div class="col-sm-4">
 
-        						<img src="assets/images/paper.jpg" alt="paper" class="img-thumbnail" id="paper1">
-        					</div>
-        					<div class="col-sm-4">
+                    <img src="assets/images/paper.jpg" alt="paper" class="img-thumbnail 1" id="paper1">
+                  </div>
+                  <div class="col-sm-4">
 
-        						<img src="assets/images/scissors.jpg" alt="scissors" class="img-thumbnail" id="scissors1">
-        					
-                  </div>		
-        			</div>
-        		
-      			</div>
-    		</div>
-  		</div>
-  		
-  		<div class="col-sm-6">
-    		<div class="card">
-      			<div class="card-body" id="player2">
-        			
-        			<h5 class="card-title">Player 2:<p id="name2"></p> </h5>
-        			
-        			<p class="card-text">Wins:<p id="wins"></p> Loses:<p id="loses"></p></p>
-        				
-        			<div class="row">
-        					<div class="col-sm-4">
+                    <img src="assets/images/scissors.jpg" alt="scissors" class="img-thumbnail 1" id="scissors1">
+                  
+                  </div>    
+              </div>
+            
+            </div>
+        </div>
+      </div>
+      
+      <div class="col-sm-6">
+        <div class="card">
+            <div class="card-body" id="player2">
+              
+              <h5 class="card-title">Player 2:<p id="name2"></p> </h5>
+              
+              <p class="card-text">Wins:<p id="wins2"></p> Loses:<p id="loses2"></p></p>
+                
+              <div class="row">
+                  <div class="col-sm-4">
 
-        						<img src="assets/images/rock.jpg" alt="rock" class="img-thumbnail rock" id="rock2">
-        					
-        					</div>
-        					<div class="col-sm-4">
+                    <img src="assets/images/rock.jpg" alt="rock" class="img-thumbnail 2" id="rock2">
+                  
+                  </div>
+                  <div class="col-sm-4">
 
-        						<img src="assets/images/paper.jpg" alt="paper" class="img-thumbnail paper" id="paper2">
-        					</div>	
-        					<div class="col-sm-4">
+                    <img src="assets/images/paper.jpg" alt="paper" class="img-thumbnail 2" id="paper2">
+                  </div>  
+                  <div class="col-sm-4">
 
-        						<img src="assets/images/scissors.jpg" alt="scissors" class="img-thumbnail scissors" id="scissors2">
-        					</div>		
-        			</div>
-        			
-        		</div>
-        	</div>
+                    <img src="assets/images/scissors.jpg" alt="scissors" class="img-thumbnail 2" id="scissors2">
+                  </div>    
+              </div>
+              
+            </div>
+          </div>
         </div>
         
     </div>
     
     <form>
-      	
-      	<!--Chat box-->
-    	<div class="form-group" id="chat">
-    	    
-    		<label for="Textarea1"></label>
-    		<textarea class="form-control" id="Textarea1" rows="3">
-    			
-    		</textarea>
-    	</div>
-    	
-    	<!--Input box-->
-    	<div class="input-group mb-3" id="message">
-    	  		
-    	  			<input type="text" class="form-control" placeholder="Hello" aria-label="Recipient's username" aria-describedby="basic-addon2">
-    	  		
-    	  		<!--Chat button-->
-    	  		<div class="input-group-append">
-    		
-    				<button class="btn btn-danger" type="button" id="submit">Chat</button>
-    	  		</div>
-    	</div>
+        
+        <!--Chat box-->
+      <div class="form-group" id="chat">
+          
+        <label for="Textarea1"></label>
+        <textarea class="form-control" id="Textarea1" rows="3">
+          
+        </textarea>
+      </div>
+      
+      <!--Input box-->
+      <div class="input-group mb-3" id="message">
+            
+              <input type="text" class="form-control" placeholder="Hello" aria-label="Recipient's username" aria-describedby="basic-addon2">
+            
+            <!--Chat button-->
+            <div class="input-group-append">
+        
+            <button class="btn btn-danger" type="button" id="submit">Chat</button>
+            </div>
+      </div>
     
     </form>
 </div>
-  		
-	
+      
+  
 
 
-	
+  
 
 
 
