@@ -209,7 +209,7 @@ function battleGrounds() {
 		
 		} else if((userWeapon1 ==="rock1") && (userWeapon2 ==="paper2")) {
 			
-			console.log(player2 + " wins");
+			//console.log(player2 + " wins");
 
 			wins2++; 
 			loses1++; 
@@ -217,66 +217,90 @@ function battleGrounds() {
 			$("#wins2").html(wins2); 
 			$("#loses1").html(loses1); 
 
-			$("#alert3").html("<b>"player2 +" wins!!</b>");
-			$("#alert4").html("<b>Tie Game!</b>");
+			$("#alert3").html("<b>" + player2 + "</b>" +"<b> wins!!</b>");
+			$("#alert4").html("<b>" + player2 + "</b>" +"<b> wins!!</b>");
 		
 		}else if ((userWeapon1 === "rock1") && (userWeapon2 === "scissors2")) {
 
-			console.log(player1 + " wins!"); 
+			//console.log(player1 + " wins!"); 
 
 			wins1++;
 			loses2++;
 
 			$("#wins1").html(wins1);
-			$("#loses2").html(loses2);   
+			$("#loses2").html(loses2); 
+
+			$("#alert3").html("<b>" + player1 + "</b>" +"<b> wins!!</b>");
+			$("#alert4").html("<b>" + player1 + "</b>" +"<b> wins!!</b>");
+		  
 		
 		}else if ((userWeapon1 === "paper1") && (userWeapon2 === "rock2")) {
 
-			console.log(player1 + " wins!"); 
+			//console.log(player1 + " wins!"); 
 
 			wins1++; 
 			loses2++; 
 
 			$("#wins1").html(wins1); 
-			$("#loses2").html(loses2); 
+			$("#loses2").html(loses2);
+
+			$("#alert3").html("<b>" + player1 + "</b>" +"<b> wins!!</b>");
+			$("#alert4").html("<b>" + player1 + "</b>" +"<b> wins!!</b>"); 
 
 		}else if ((userWeapon1 === "paper1") && (userWeapon2 === "paper2")) {
 
-			console.log("tie"); 
+			//console.log("tie");
+
+			$("#alert3").html("<b>Tie Game!</b>");
+			$("#alert4").html("<b>Tie Game!</b>"); 
 
 		}else if ((userWeapon1 === "paper1") && (userWeapon2 === "scissors2")) {
 
-			console.log(player2 + " wins!"); 
+			//console.log(player2 + " wins!"); 
 
 			wins2++; 
 			loses1++; 
 
 			$("#wins2").html(wins2); 
-			$("#loses1").html(loses1); 
+			$("#loses1").html(loses1);
+
+			$("#alert3").html("<b>" + player2 + "</b>" +"<b> wins!!</b>");
+			$("#alert4").html("<b>" + player2 + "</b>" +"<b> wins!!</b>"); 
 		
 		}else if ((userWeapon1 === "scissors1") && (userWeapon2 === "rock2")) {
 
-			console.log(player2 + " wins"); 
+			//console.log(player2 + " wins"); 
 
 			wins2++; 
 			loses1++;
 
 			$("#wins2").html(wins2); 
 			$("#loses1").html(loses1);  
+
+			$("#alert3").html("<b>" + player2 + "</b>" +"<b> wins!!</b>");
+			$("#alert4").html("<b>" + player2 + "</b>" +"<b> wins!!</b>");
 		
 		}else if ((userWeapon1 === "scissors1") && (userWeapon2 === "paper2")) {
 
-			console.log(player1 + " wins"); 
+			//console.log(player1 + " wins"); 
 
 			wins1++; 
 			loses2++; 
 
 			$("#wins1").html(wins1); 
 			$("#loses2").html(loses2); 
+
+			$("#alert3").html("<b>" + player1 + "</b>" +"<b> wins!!</b>");
+			$("#alert4").html("<b>" + player1 + "</b>" +"<b> wins!!</b>");
 		
 		}else if ((userWeapon1 === "scissors1") && (userWeapon2 === "scissors2")) {
 
-			console.log("tie"); 
+			//console.log("tie"); 
+
+			$("#alert3").html("<b>Tie Game!</b>");
+			$("#alert4").html("<b>Tie Game!</b>");
+
+
 		}
 
 	}
